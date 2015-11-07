@@ -3,5 +3,9 @@
   <p>
     This is my smart todo list Ruby on Rails Application
   </p>
-  <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <% if current_user %>
+  <%= link_to "Tasks", tasks_path, class: "btn btn-primary btn-lg" %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  <% end %>
 </div>
