@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/test', to: 'pages#test'
+
 
   devise_for :users
   # get 'pages/home'
