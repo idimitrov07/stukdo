@@ -8,7 +8,8 @@ class Task < ActiveRecord::Base
     html_escape
     image
     youtube(width: "100%", height: 250, autoplay: false)
-    link target: "_blank", rel: "nofollow"
+    soundcloud(widht: "100%", height: 100, autoplay: false)
+    link  target: "_blank", rel: "nofollow"
     simple_format
   end
 end
