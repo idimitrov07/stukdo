@@ -1,2 +1,5 @@
-$("#task_<%= @task.id %>").remove();
-$("#todo_tasks").append('<%=j render @task %>');
+$("#task_<%= @task.id %>").fadeOut("slow", function(){
+  $(this).remove();
+});
+var item =
+$("#todo_tasks").append('<%=j render @task %>').children(':last').hide().fadeIn(300);
