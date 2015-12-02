@@ -1,5 +1,5 @@
 
-<div class="panel panel-info">
+<div class="panel panel-info" id="task_<%= task.id %>">
   <div class="panel-heading">
     <%= link_to edit_task_path(task) do %>
       <%= time_ago_in_words(task.created_at) %> ago
@@ -12,7 +12,7 @@
   <div class="panel-footer text-center">
     <% if task.state == "doing" %>
     <div class="btn-group btn-group-justified">
-      <%= link_to "<i class='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "to_do"), method: :put, class: "btn btn-info btn-md btn-block" %>
+      <%= link_to "<i class='fa fa-arrow-left'></i>".html_safe, change_task_path(task, state: "to_do"), remote: true, method: :put, class: "btn btn-info btn-md btn-block" %>
       <%= link_to "<i class='fa fa-arrow-right'></i>".html_safe, change_task_path(task, state: "done"), method: :put, class: "btn btn-info btn-md btn-block" %>
     </div>
     <% elsif task.state == "to_do" %>
