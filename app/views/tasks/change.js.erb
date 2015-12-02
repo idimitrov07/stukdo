@@ -1,5 +1,11 @@
+
 $("#task_<%= @task.id %>").fadeOut("slow", function(){
   $(this).remove();
 });
-var item =
-$("#todo_tasks").append('<%=j render @task %>').children(':last').hide().fadeIn(300);
+<% if params[:state] == "to_do" %>
+  $("#todo_tasks").append('<%=j render @task %>').children(':last').hide().fadeIn(200);
+<% elsif params[:state] == "doing" %>
+  $("#doing_tasks").append('<%=j render @task %>').children(':last').hide().fadeIn(200);
+<% else %>
+  $("#done_tasks").append('<%=j render @task %>').children(':last').hide().fadeIn(200);
+<% end %>
